@@ -66,7 +66,7 @@
             border-radius: 10px;
             transition: 0.3s;
             opacity: 0;
-            animation: fadeIn 3s ease-in forwards 2s; /* 2秒遅れてフェードイン */
+            animation: fadeIn 3s ease-in forwards 2s; 
         }
 
         button:hover {
@@ -88,7 +88,6 @@
     
 
     <script>
-        // 火の粉を描くキャンバス
         const canvas = document.getElementById('fireCanvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -134,8 +133,7 @@
         }
 
         animate();
-
-        // 画面サイズ変更時にキャンバスサイズを更新
+        
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
