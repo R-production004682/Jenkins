@@ -10,6 +10,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building'
+                withCredentials([[
+                    $class: 'AmazonWebServiceCredentialsBinding',
+                    credentialsId: 'MyAWS',
+                    accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
+                        sh(script: 'aws s3 cp FilePath(FROM) S3Path(TO)')
+                    }
             }
         }
         stage('Deploy') {
