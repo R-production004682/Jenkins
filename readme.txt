@@ -19,8 +19,8 @@ pipeline {
                     $class: 'AmazonWebServicesCredentialsBinding',
                     credentialsId: 'MyAWS',
                     accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-                    sh(script: 'aws s3 cp FilePath(FROM) S3Path(TO)')
+                    secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
+                        sh(script: 'aws s3 cp FilePath(FROM) S3Path(TO)')
                 }
             }
         }
